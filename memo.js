@@ -1,16 +1,16 @@
-const memoInput = document.getElementById("memoInput");
-const saveBtn = document.getElementById("saveBtn");
+document.addEventListener("DOMContentLoaded", () => {
+    const memoInput = document.getElementById("memoInput");
+    const saveBtn = document.getElementById("saveBtn");
 
-// ページ読み込み時に保存済みメモを復元
-window.addEventListener("load", () => {
+    // ページ読み込み時に保存済みメモを復元
     const savedMemo = localStorage.getItem("memo");
     if (savedMemo) {
         memoInput.value = savedMemo;
     }
-});
 
-// 保存ボタンで localStorage に保存
-saveBtn.addEventListener("click", () => {
-    localStorage.setItem("memo", memoInput.value);
-    alert("メモを保存しました！");
+    // 保存ボタンで localStorage に保存
+    saveBtn.addEventListener("click", () => {
+        localStorage.setItem("memo", memoInput.value);
+        alert("メモを保存しました！");
+    });
 });
